@@ -61,9 +61,6 @@ jobs:
       - name: "Install dependencies"
         run: "composer install --no-interaction --no-progress"
 
-      - name: "Lint"
-        run: "make lint"
-
       - name: "Coding Standard"
         run: "make install-php-cs-fixer php-cs-fixer"
 
