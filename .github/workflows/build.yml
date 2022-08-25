@@ -65,7 +65,7 @@ jobs:
         run: "make lint"
 
       - name: "Coding Standard"
-        run: "make php-cs-fixer"
+        run: "make install-php-cs-fixer php-cs-fixer"
 
   tests:
     name: "Tests"
