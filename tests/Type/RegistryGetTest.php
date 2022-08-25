@@ -1,0 +1,32 @@
+<?php declare(strict_types=1);
+
+namespace dreikern\PhpStanOxid\Tests\Type;
+
+use PHPStan\Testing\TypeInferenceTestCase;
+
+class RegistryGetTest extends TypeInferenceTestCase
+{
+    /**
+     * @return iterable<mixed>
+     */
+    public function dataFileAsserts(): iterable
+    {
+        yield from $this->gatherAssertTypes(__DIR__.'/data/registry-get-types.php');
+    }
+
+    /**
+     * @dataProvider dataFileAsserts
+     */
+    public function testFileAsserts(
+        string $assertType,
+        string $file,
+        mixed ...$args
+    ): void {
+        $this->assertFileAsserts($assertType, $file, ...$args);
+    }
+
+    public static function getAdditionalConfigFiles(): array
+    {
+        return [__DIR__.'/../../extension.neon'];
+    }
+}

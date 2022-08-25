@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Controller;
+
+class ArticleDetailsController extends \OxidEsales\Eshop\Application\Controller\FrontendController
+{
+    /**
+     * @return string|void
+     */
+    public function getTitle();
+}

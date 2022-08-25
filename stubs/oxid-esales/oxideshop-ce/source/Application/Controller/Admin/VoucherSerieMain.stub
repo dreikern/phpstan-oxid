@@ -1,0 +1,15 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Controller\Admin;
+
+use OxidEsales\Eshop\Application\Model\VoucherSerie;
+
+class VoucherSerieMain extends \OxidEsales\Eshop\Application\Controller\Admin\DynamicExportBaseController
+{
+    /**
+     * Returns voucher serie object
+     *
+     * @return ?VoucherSerie
+     */
+    protected function _getVoucherSerie();
+}

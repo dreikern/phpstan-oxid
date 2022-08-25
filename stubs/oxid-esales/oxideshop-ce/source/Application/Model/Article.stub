@@ -1,0 +1,48 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+class Article extends \OxidEsales\Eshop\Core\Model\MultiLanguageModel implements \OxidEsales\Eshop\Application\Model\Contract\ArticleInterface, \OxidEsales\Eshop\Core\Contract\IUrl
+{
+    /**
+     * @return ?\OxidEsales\Eshop\Application\Model\Article
+     */
+    public function getParentArticle();
+
+    /**
+     * @param bool $blCalculationModeNetto
+     * @return \OxidEsales\Eshop\Core\Price
+     */
+    protected function _getPriceObject($blCalculationModeNetto = null);
+
+    /**
+     * @return ?\OxidEsales\Eshop\Application\Model\ArticleList
+     */
+    public function getAccessoires();
+
+    /**
+     * @return ?\OxidEsales\Eshop\Core\Price
+     */
+    public function getVarMinPrice();
+
+    /**
+     * @return ?\OxidEsales\Eshop\Core\Price
+     */
+    public function getMinPrice();
+
+    /**
+     * @param float|int $dAmount article amount.
+     * @return ?\OxidEsales\Eshop\Core\Price
+     */
+    public function getPrice($dAmount = 1);
+
+    /**
+     * @return string|void
+     */
+    public function getUnitName();
+
+    /**
+     * @return string|null
+     */
+    public function getParentId();
+}

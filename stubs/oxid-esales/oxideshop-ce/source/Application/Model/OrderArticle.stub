@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+class OrderArticle
+{
+    /**
+     * @return \OxidEsales\Eshop\Core\Price
+     */
+    public function getBasketPrice($dAmount, $aSelList, $oBasket);
+}

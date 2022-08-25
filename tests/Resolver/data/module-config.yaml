@@ -1,0 +1,21 @@
+modules:
+  acme_oxidproject_test_module:
+    id: acme_oxidproject_test_module
+    path: modules/TestModule
+    version: 1.0.0
+    configured: true
+    classExtensions:
+      OxidEsales\Eshop\Core\InputValidator: Acme\OxidProject\TestModule\Core\InputValidator
+  acme_oxidproject_legacy_module:
+    id: acme_oxidproject_legacy_module
+    path: modules/LegacyModule
+    version: 1.0.0
+    configured: true
+    classExtensions:
+      OxidEsales\Eshop\Core\UserCounter: legacy/modul/user_counter
+moduleChains:
+  classExtensions:
+    OxidEsales\Eshop\Core\InputValidator:
+      - Acme\OxidProject\TestModule\Core\InputValidator
+    OxidEsales\Eshop\Core\UserCounter:
+      - legacy/modul/user_counter

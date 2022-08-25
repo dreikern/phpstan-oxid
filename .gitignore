@@ -1,0 +1,9 @@
+/reports
+/source
+/tests/tmp
+/vendor
+/var
+
+/composer.lock
+.phpunit.result.cache
+.php-cs-fixer.cache

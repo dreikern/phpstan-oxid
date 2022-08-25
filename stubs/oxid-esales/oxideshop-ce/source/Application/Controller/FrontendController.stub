@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Controller;
+
+class FrontendController extends \OxidEsales\Eshop\Core\Controller\BaseController
+{
+    /**
+     * @var ?\OxidEsales\Eshop\Application\Model\Article
+     */
+    protected $_oProduct = null;
+}

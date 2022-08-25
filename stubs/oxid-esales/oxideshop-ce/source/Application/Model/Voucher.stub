@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+class Voucher extends \OxidEsales\Eshop\Core\Model\BaseModel
+{
+    /**
+     * @return \OxidEsales\Eshop\Application\Model\VoucherSerie
+     */
+    public function getSerie();
+}

@@ -1,0 +1,50 @@
+{
+	"name": "dreikern/phpstan-oxid",
+	"type": "phpstan-extension",
+	"description": "PHPStan extension for OXID eShop",
+	"license": [
+		"MIT"
+	],
+	"require": {
+		"php": "^7.4 || ^8.0",
+		"phpstan/phpstan": "^1.8.0",
+		"symfony/yaml": ">=3.4"
+	},
+	"require-dev": {
+		"nikic/php-parser": "^4.13.0",
+		"oxid-esales/oxideshop-ce": "^v6.10.0 || ^v7.0.0@rc",
+		"php-parallel-lint/php-parallel-lint": "^1.3",
+		"phpstan/phpstan-phpunit": "^1.0",
+		"phpstan/phpstan-strict-rules": "^1.0",
+		"phpunit/phpunit": "^9.5"
+	},
+	"config": {
+		"sort-packages": true,
+		"allow-plugins": {
+			"oxid-esales/oxideshop-unified-namespace-generator": true,
+			"oxid-esales/oxideshop-composer-plugin": true
+		}
+	},
+	"extra": {
+		"phpstan": {
+			"includes": [
+				"extension.neon"
+			]
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"dreikern\\PhpStanOxid\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Acme\\OxidProject\\": "tests/shop/modules"
+		},
+		"classmap": [
+			"tests/"
+		]
+	},
+	"minimum-stability": "dev",
+	"prefer-stable": true
+}

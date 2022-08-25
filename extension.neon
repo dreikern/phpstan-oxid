@@ -1,0 +1,73 @@
+parameters:
+	oxid:
+		shopConfigurationPath: var/configuration/shops/1.yaml
+
+	bootstrapFiles:
+		- oxid-bootstrap.php
+	stubFiles:
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/ArticleDetailsController.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/FrontendController.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/ArticleSeo.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/CategorySeo.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/VoucherSerieMain.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/Contract/ArticleInterface.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/Article.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/Basket.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/BasketItem.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/DiscountList.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/OrderArticle.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/Voucher.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/VoucherSerie.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Core/Base.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Core/Model/MultiLanguageModel.stub
+	scanFiles:
+		- vendor/oxid-esales/oxideshop-ce/source/oxfunctions.php
+		- vendor/oxid-esales/oxideshop-ce/source/overridablefunctions.php
+		- vendor/oxid-esales/oxideshop-ce/source/Core/utils/oxpicgenerator.php
+
+parametersSchema:
+	oxid: structure([
+		shopConfigurationPath: schema(string())
+	])
+
+rules:
+	- dreikern\PhpStanOxid\Rule\OxNewCalledWithEditionNamespaceRule
+	- dreikern\PhpStanOxid\Rule\OxNewCalledWithLegacyClassNameRule
+	- dreikern\PhpStanOxid\Rule\RegistryGetCalledWithEditionNamespaceRule
+	- dreikern\PhpStanOxid\Rule\RegistryGetCalledWithLegacyClassNameRule
+
+services:
+	-
+		class: dreikern\PhpStanOxid\Resolver\IsolatedClassChainResolver
+		arguments:
+			shopConfigurationPath: %oxid.shopConfigurationPath%
+
+	-
+		class: dreikern\PhpStanOxid\Reflection\BaseModelDbAccessPropertiesClassReflection
+		tags:
+			- phpstan.broker.propertiesClassReflectionExtension
+
+	-
+		class: dreikern\PhpStanOxid\Reflection\FieldAccessPropertiesClassReflection
+		tags:
+			- phpstan.broker.propertiesClassReflectionExtension
+
+	-
+		class: dreikern\PhpStanOxid\Reflection\InheritanceMethodsClassReflection
+		tags:
+			- phpstan.broker.methodsClassReflectionExtension
+
+	-
+		class: dreikern\PhpStanOxid\Reflection\InheritancePropertiesClassReflection
+		tags:
+			- phpstan.broker.propertiesClassReflectionExtension
+
+	-
+		class: dreikern\PhpStanOxid\Type\OxNewFunctionDynamicReturnTypeExtension
+		tags:
+			- phpstan.broker.dynamicFunctionReturnTypeExtension
+
+	-
+		class: dreikern\PhpStanOxid\Type\RegistryGetDynamicMethodReturnTypeExtension
+		tags:
+			- phpstan.broker.dynamicStaticMethodReturnTypeExtension

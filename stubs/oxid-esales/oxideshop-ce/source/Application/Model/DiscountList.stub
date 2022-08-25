@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+class DiscountList extends \OxidEsales\Eshop\Core\Model\ListModel
+{
+    /**
+     * @return self
+     */
+    protected function _getList($oUser = null);
+}

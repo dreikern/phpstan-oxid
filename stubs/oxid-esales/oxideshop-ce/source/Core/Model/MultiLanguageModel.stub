@@ -1,0 +1,21 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Core\Model;
+
+class MultiLanguageModel extends \OxidEsales\Eshop\Core\Model\BaseModel
+{
+    /**
+     * @param ?int $lang
+     */
+    public function setLanguage($lang = null);
+
+    /**
+     * @param string $name
+     * @param int $status
+     * @param string $type
+     * @param string $length
+     *
+     * @return null
+     */
+    protected function _addField($name, $status, $type = null, $length = null);
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+/**
+ * @phpstan-type SimpleVoucher object
+ */
+
+class Basket extends \OxidEsales\Eshop\Core\Base
+{
+}

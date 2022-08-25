@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Controller\Admin;
+
+class CategorySeo extends \OxidEsales\Eshop\Application\Controller\Admin\ObjectSeo
+{
+    /**
+     * @return \OxidEsales\Eshop\Application\Model\SeoEncoderCategory
+     */
+    protected function _getEncoder();
+}

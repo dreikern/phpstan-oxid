@@ -1,0 +1,20 @@
+modules:
+  acme_oxidproject_enabled_module:
+    id: acme_oxidproject_enabled_module
+    path: modules/EnabledModule
+    version: 1.0.0
+    configured: true
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewConfig: Acme\OxidProject\EnabledModule\Core\ViewConfig
+  acme_oxidproject_disabled_module:
+    id:   acme_oxidproject_disabled_module
+    path: modules/DisabledModule
+    version: 1.0.0
+    configured: false
+    classExtensions:
+      OxidEsales\Eshop\Core\ViewConfig: Acme\OxidProject\DisabledModule\Core\ViewConfig
+moduleChains:
+  classExtensions:
+    OxidEsales\Eshop\Core\ViewConfig:
+      - Acme\OxidProject\EnabledModule\Core\ViewConfig
+      - Acme\OxidProject\DisabledModule\Core\ViewConfig

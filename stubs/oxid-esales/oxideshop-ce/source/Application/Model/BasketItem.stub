@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model;
+
+class BasketItem extends \OxidEsales\Eshop\Core\Base
+{
+    /**
+     * @return \OxidEsales\Eshop\Application\Model\Article|\OxidEsales\Eshop\Application\Model\OrderArticle
+     */
+    public function getArticle($blCheckProduct = false, $sProductId = null, $blDisableLazyLoading = false);
+}

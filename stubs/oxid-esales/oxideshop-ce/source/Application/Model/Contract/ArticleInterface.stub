@@ -1,0 +1,15 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Model\Contract;
+
+interface ArticleInterface
+{
+    /**
+     * @param float  $dAmount  Amount
+     * @param array  $aSelList Selection list
+     * @param object $oBasket  User shopping basket object
+     *
+     * @return \OxidEsales\Eshop\Core\Price
+     */
+    public function getBasketPrice($dAmount, $aSelList, $oBasket);
+}
