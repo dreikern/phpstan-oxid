@@ -1,5 +1,9 @@
 # Doctrine extensions for PHPStan
 
+[![Build](https://github.com/dreikern/phpstan-oxid/workflows/Build/badge.svg)](https://github.com/dreikern/phpstan-oxid/actions)
+[![Latest Stable Version](https://poser.pugx.org/dreikern/phpstan-oxid/v/stable)](https://packagist.org/packages/dreikern/phpstan-oxid)
+[![License](https://poser.pugx.org/dreikern/phpstan-oxid/license)](https://packagist.org/packages/dreikern/phpstan-oxid)
+
 * [PHPStan](https://phpstan.org/)
 * [OXID eShop](https://github.com/OXID-eSales/oxideshop_ce)
 
