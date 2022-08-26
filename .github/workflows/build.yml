@@ -79,10 +79,10 @@ jobs:
           - "lowest"
           - "highest"
         include:
-          - dependencies: "rc"
-            php-version:
-              - "8.0"
-              - "8.1"
+          - php-version: "8.0"
+            dependencies: "rc"
+          - php-version: "8.1"
+            dependencies: "rc"
 
     steps:
       - name: "Checkout"
