@@ -24,7 +24,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.DREIKERN_BOT_TOKEN }}
 
       - name: 'Get Previous tag'
         id: previoustag
