@@ -104,7 +104,7 @@ jobs:
 
       - name: "Install rc dependencies"
         if: ${{ matrix.dependencies == 'rc' }}
-        run: "composer update --no-interaction --no-progress && rm -rf vendor && composer require oxid-esales/oxideshop-ce=v7.0.0-rc.2 --dev --with-all-dependencies --no-interaction --no-progres"
+        run: "composer update --no-interaction --no-progress && rm -rf vendor && composer require oxid-esales/oxideshop-ce=v7.0.0-rc.2 --dev --with-all-dependencies --no-interaction --no-progress"
 
       - name: "Tests"
         run: "make tests"
