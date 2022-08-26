@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Application\Controller;
+
+class NewsletterController extends \OxidEsales\Eshop\Application\Controller\FrontendController
+{
+    /**
+     * @return void
+     */
+    public function send();
+}
