@@ -106,7 +106,7 @@ Registry::get() call with edition namespace for class `%s`. Use `%s` instead.
 - class: [`dreikern\PhpStanOxid\Rule\RegistryGetCalledWithEditionNamespaceRule`](src/Rule/RegistryGetCalledWithEditionNamespaceRule.php)
 
 ```php
-Registry::get('oxdiscount');
+Registry::get(\OxidEsales\EshopCommunity\Application\Model\Voucher::class);
 ```
 
 :x:
@@ -126,7 +126,7 @@ Registry::get() call with legacy className `%s`. Use `%s` instead.
 - class: [`dreikern\PhpStanOxid\Rule\RegistryGetCalledWithLegacyClassNameRule`](src/Rule/RegistryGetCalledWithLegacyClassNameRule.php)
 
 ```php
-Registry::get(\OxidEsales\EshopCommunity\Application\Model\Voucher::class);
+Registry::get('oxdiscount');
 ```
 
 :x:
