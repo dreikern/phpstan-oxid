@@ -17,7 +17,7 @@ is aware of any changes your code adds to OXID eShop classes.
 * Stubs [some](stubs) OXID eShops classes to fix incorrect phpdoc comments in OXID eShop. Feel free to contribute more stubs when you encounter
 such mistakes. [PHPStan Documentation](https://phpstan.org/user-guide/stub-files)
 * Provide [rules](#rules) to detect usage of legacy class names (e.g. `oxdiscount` instead of `\OxidEsales\Eshop\Application\Model\Discount`) or
-classes without unified namespace (e.g. **\OxidEsales\Eshop~~Community~~\Application\Model\Voucher**).
+classes without unified namespace (e.g. `\OxidEsales\EshopCommunity\Application\Model\Voucher` instead of `\OxidEsales\Eshop\Application\Model\Voucher`).
 
 ## Installation
 
