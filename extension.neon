@@ -7,6 +7,7 @@ parameters:
 	stubFiles:
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/ArticleDetailsController.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/FrontendController.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/NewsletterController.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/ArticleSeo.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/CategorySeo.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Controller/Admin/VoucherSerieMain.stub
