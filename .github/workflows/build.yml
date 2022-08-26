@@ -78,6 +78,7 @@ jobs:
         dependencies:
           - "lowest"
           - "highest"
+          - "rc"
 
     steps:
       - name: "Checkout"
@@ -96,6 +97,10 @@ jobs:
       - name: "Install highest dependencies"
         if: ${{ matrix.dependencies == 'highest' }}
         run: "composer update --no-interaction --no-progress"
+
+      - name: "Install rc dependencies"
+        if: ${{ matrix.dependencies == 'rc' && matrix.php-version != '7.4' }}
+        run: "composer update --no-interaction --no-progress && rm -rf vendor && composer require oxid-esales/oxideshop-ce=v7.0.0-rc.2 --dev --with-all-dependencies --no-interaction --no-progres"
 
       - name: "Tests"
         run: "make tests"
