@@ -1,4 +1,4 @@
-# Doctrine extensions for PHPStan
+# OXID eShop extensions for PHPStan
 
 [![Build](https://github.com/dreikern/phpstan-oxid/workflows/Build/badge.svg)](https://github.com/dreikern/phpstan-oxid/actions)
 [![Latest Stable Version](https://poser.pugx.org/dreikern/phpstan-oxid/v/stable)](https://packagist.org/packages/dreikern/phpstan-oxid)
