@@ -2,8 +2,6 @@
 
 namespace dreikern\PhpStanOxid\Type;
 
-use function count;
-
 use dreikern\PhpStanOxid\Resolver\ResolverInterface;
 use PhpParser\Node\Expr\FuncCall;
 use PHPStan\Analyser\Scope;
@@ -34,7 +32,7 @@ class OxNewFunctionDynamicReturnTypeExtension implements DynamicFunctionReturnTy
         FuncCall $functionCall,
         Scope $scope
     ): ?Type {
-        if (0 === count($functionCall->getArgs())) {
+        if (0 === \count($functionCall->getArgs())) {
             return ParametersAcceptorSelector::selectSingle(
                 $functionReflection->getVariants()
             )->getReturnType();

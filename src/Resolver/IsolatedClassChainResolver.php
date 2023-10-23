@@ -63,8 +63,8 @@ class IsolatedClassChainResolver implements ResolverInterface
         $className = $this->getUnifiedClassNameForLegacyClass($className) ?? $className;
         $className = $this->getUnifiedClassName($className);
 
-        if (!isset($this->configuration['moduleChains']['classExtensions'][$className]) ||
-            !count($this->configuration['moduleChains']['classExtensions'][$className])) {
+        if (!isset($this->configuration['moduleChains']['classExtensions'][$className])
+            || !count($this->configuration['moduleChains']['classExtensions'][$className])) {
             return null;
         }
 

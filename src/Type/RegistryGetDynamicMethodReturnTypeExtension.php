@@ -2,8 +2,6 @@
 
 namespace dreikern\PhpStanOxid\Type;
 
-use function count;
-
 use dreikern\PhpStanOxid\Resolver\ResolverInterface;
 use OxidEsales\Eshop\Core\Registry;
 use PhpParser\Node\Expr\ClassConstFetch;
@@ -39,7 +37,7 @@ class RegistryGetDynamicMethodReturnTypeExtension implements DynamicStaticMethod
 
     public function getTypeFromStaticMethodCall(MethodReflection $methodReflection, StaticCall $methodCall, Scope $scope): ?Type
     {
-        if (0 === count($methodCall->getArgs())) {
+        if (0 === \count($methodCall->getArgs())) {
             return new ErrorType();
         }
 
