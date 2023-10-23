@@ -20,6 +20,7 @@ parameters:
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/Voucher.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Application/Model/VoucherSerie.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Core/Base.stub
+		- stubs/oxid-esales/oxideshop-ce/source/Core/Config.stub
 		- stubs/oxid-esales/oxideshop-ce/source/Core/Model/MultiLanguageModel.stub
 	scanFiles:
 		- ../../oxid-esales/oxideshop-ce/source/oxfunctions.php

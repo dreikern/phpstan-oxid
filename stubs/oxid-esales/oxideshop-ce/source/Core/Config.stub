@@ -1,0 +1,11 @@
+<?php
+
+namespace OxidEsales\EshopCommunity\Core;
+
+class Config extends \OxidEsales\Eshop\Core\Base
+{
+    /**
+     * @return int
+     */
+    public function getShopCurrency();
+}
