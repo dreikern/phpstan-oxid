@@ -7,7 +7,6 @@ use PhpParser\Node;
 use PHPStan\Analyser\Scope;
 use PHPStan\Rules\Rule;
 use PHPStan\Rules\RuleErrorBuilder;
-use PHPStan\Type\Constant\ConstantStringType;
 
 /**
  * @implements \PHPStan\Rules\Rule<Node\Expr\FuncCall>
@@ -41,7 +40,7 @@ class OxNewCalledWithEditionNamespaceRule implements Rule
         $firstArg = $node->getArgs()[0];
         $formatArgType = $scope->getType($firstArg->value);
 
-        if (count($formatArgType->getConstantStrings()) === 0) {
+        if (0 === count($formatArgType->getConstantStrings())) {
             return [];
         }
 

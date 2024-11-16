@@ -7,7 +7,6 @@ use PhpParser\Node\Expr\FuncCall;
 use PHPStan\Analyser\Scope;
 use PHPStan\Reflection\FunctionReflection;
 use PHPStan\Reflection\ParametersAcceptorSelector;
-use PHPStan\Type\Constant\ConstantStringType;
 use PHPStan\Type\DynamicFunctionReturnTypeExtension;
 use PHPStan\Type\ObjectType;
 use PHPStan\Type\Type;
@@ -42,7 +41,7 @@ class OxNewFunctionDynamicReturnTypeExtension implements DynamicFunctionReturnTy
 
         $argType = $scope->getType($functionCall->getArgs()[0]->value);
 
-        if (count($argType->getConstantStrings()) === 0) {
+        if (0 === count($argType->getConstantStrings())) {
             return null;
         }
 
