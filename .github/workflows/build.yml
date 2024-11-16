@@ -17,9 +17,10 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.4"
           - "8.0"
           - "8.1"
+          - "8.2"
+          - "8.3"
 
     steps:
       - name: "Checkout"
@@ -72,9 +73,10 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.4"
           - "8.0"
           - "8.1"
+          - "8.2"
+          - "8.3"
         dependencies:
           - "lowest"
           - "highest"
@@ -82,6 +84,10 @@ jobs:
           - php-version: "8.0"
             dependencies: "rc"
           - php-version: "8.1"
+            dependencies: "rc"
+          - php-version: "8.2"
+            dependencies: "rc"
+          - php-version: "8.3"
             dependencies: "rc"
 
     steps:
@@ -117,9 +123,10 @@ jobs:
       fail-fast: false
       matrix:
         php-version:
-          - "7.4"
           - "8.0"
           - "8.1"
+          - "8.2"
+          - "8.3"
 
     steps:
       - name: "Checkout"
