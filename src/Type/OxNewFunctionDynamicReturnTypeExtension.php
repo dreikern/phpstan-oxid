@@ -22,7 +22,7 @@ class OxNewFunctionDynamicReturnTypeExtension implements DynamicFunctionReturnTy
     }
 
     public function isFunctionSupported(
-        FunctionReflection $functionReflection
+        FunctionReflection $functionReflection,
     ): bool {
         return 'oxnew' === strtolower($functionReflection->getName());
     }
@@ -30,7 +30,7 @@ class OxNewFunctionDynamicReturnTypeExtension implements DynamicFunctionReturnTy
     public function getTypeFromFunctionCall(
         FunctionReflection $functionReflection,
         FuncCall $functionCall,
-        Scope $scope
+        Scope $scope,
     ): ?Type {
         if (0 === \count($functionCall->getArgs())) {
             return ParametersAcceptorSelector::selectSingle(

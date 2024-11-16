@@ -9,10 +9,10 @@ use PHPStan\Type\Type;
 
 class ObjectPropertyReflection implements PropertyReflection
 {
-    /** @var \PHPStan\Reflection\ClassReflection */
+    /** @var ClassReflection */
     private $declaringClass;
 
-    /** @var \PHPStan\Type\Type */
+    /** @var Type */
     private $type;
 
     public function __construct(ClassReflection $declaringClass, Type $type)

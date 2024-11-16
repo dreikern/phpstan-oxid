@@ -4,4 +4,4 @@ use OxidEsales\Eshop\Core\ViewConfig;
 
 use function PHPStan\Testing\assertType;
 
-assertType(\Acme\OxidProject\EnabledModule\Core\ViewConfig::class, oxNew(ViewConfig::class));
+assertType(Acme\OxidProject\EnabledModule\Core\ViewConfig::class, oxNew(ViewConfig::class));
