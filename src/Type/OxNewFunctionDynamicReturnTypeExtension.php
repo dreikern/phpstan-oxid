@@ -33,15 +33,21 @@ class OxNewFunctionDynamicReturnTypeExtension implements DynamicFunctionReturnTy
         Scope $scope,
     ): ?Type {
         if (0 === \count($functionCall->getArgs())) {
-            return ParametersAcceptorSelector::selectSingle(
+            return ParametersAcceptorSelector::selectFromArgs(
+                $scope,
+                $functionCall->getArgs(),
                 $functionReflection->getVariants()
             )->getReturnType();
         }
 
         $argType = $scope->getType($functionCall->getArgs()[0]->value);
 
-        if ($argType instanceof ConstantStringType) {
-            $objectName = $argType->getValue();
+        if (count($argType->getConstantStrings()) === 0) {
+            return null;
+        }
+
+        foreach ($argType->getConstantStrings() as $constantString) {
+            $objectName = $constantString->getValue();
             $lastChildClass = $this->resolver->getLastActiveChildClass($objectName);
 
             if ($lastChildClass) {

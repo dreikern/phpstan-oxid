@@ -47,20 +47,24 @@ class RegistryGetCalledWithLegacyClassNameRule implements Rule
         $firstArg = $node->getArgs()[0];
         $formatArgType = $scope->getType($firstArg->value);
 
-        if (!$formatArgType instanceof ConstantStringType) {
+        if (count($formatArgType->getConstantStrings()) === 0) {
             return [];
         }
 
-        $newFqdn = $this->resolver->getUnifiedClassNameForLegacyClass($formatArgType->getValue());
+        foreach ($formatArgType->getConstantStrings() as $constantString) {
+            $newFqdn = $this->resolver->getUnifiedClassNameForLegacyClass($constantString->getValue());
 
-        if (!$newFqdn) {
-            return [];
+            if (!$newFqdn) {
+                return [];
+            }
+
+            return [
+                RuleErrorBuilder::message(
+                    sprintf('Registry::get() call with legacy className %s. Use %s instead.', $constantString->getValue(), $newFqdn)
+                )
+                    ->identifier('oxid.rule.RegistryGetCalledWithLegacyClassNameRule')
+                    ->build(),
+            ];
         }
-
-        return [
-            RuleErrorBuilder::message(
-                sprintf('Registry::get() call with legacy className %s. Use %s instead.', $formatArgType->getValue(), $newFqdn)
-            )->build(),
-        ];
     }
 }

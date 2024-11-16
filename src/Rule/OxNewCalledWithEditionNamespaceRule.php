@@ -41,20 +41,24 @@ class OxNewCalledWithEditionNamespaceRule implements Rule
         $firstArg = $node->getArgs()[0];
         $formatArgType = $scope->getType($firstArg->value);
 
-        if (!$formatArgType instanceof ConstantStringType) {
+        if (count($formatArgType->getConstantStrings()) === 0) {
             return [];
         }
 
-        $newFqdn = $this->resolver->getUnifiedClassName($formatArgType->getValue());
+        foreach ($formatArgType->getConstantStrings() as $constantString) {
+            $newFqdn = $this->resolver->getUnifiedClassName($constantString->getValue());
 
-        if ($formatArgType->getValue() === $newFqdn) {
-            return [];
+            if ($constantString->getValue() === $newFqdn) {
+                return [];
+            }
+
+            return [
+                RuleErrorBuilder::message(
+                    sprintf('oxNew() call with edition namespace for class %s. Use %s instead.', $constantString->getValue(), $newFqdn)
+                )
+                    ->identifier('oxid.rule.OxNewCalledWithEditionNamespaceRule')
+                    ->build(),
+            ];
         }
-
-        return [
-            RuleErrorBuilder::message(
-                sprintf('oxNew() call with edition namespace for class %s. Use %s instead.', $formatArgType->getValue(), $newFqdn)
-            )->build(),
-        ];
     }
 }
